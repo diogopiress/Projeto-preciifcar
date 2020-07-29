@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de Mão de obra</title>
+
+    <style>
+
+        input#calcular{
+            margin-top: 20px;
+            font-size: large;            
+        }
+        div#res{
+            margin-top: 20px;
+            width: 250px;
+            font-size: 20px;
+            font-style: italic;
+            background-color:grey ;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    Salarios dos funcionarios: <input type="number" name="salariofuncionario" id="salariofuncionario">
+    <br/>
+    Encargos sociais: <input type="number" name="emcargossociais" id="encargossociais">
+    <br/>
+    Quantidade de funcionarios: <input type="number" name="totalfuncionarios" id="totalfuncionarios">
+    <br/>
+    Carga horaria mensal (160 ou 220 horas): <input type="number" name="cargahoraria" id="cargahoraria">
+    <br/>
+    <input type="button" id="calcular" value="Calcular" onclick="calcular()">
+
+    <div id="res"></div>
+
+
+    <script>
+        function calcular() {
+            
+            var salariofunc = window.document.querySelector('input#salariofuncionario')//para fazer a ligação com o imput
+            var encsociais = window.document.querySelector('input#encargossociais')//para fazer a ligação com o imput
+            var quantfuncionarios = window.document.querySelector('input#totalfuncionarios')//para fazer a ligação com o imput
+            var cargahora = window.document.querySelector('input#cargahoraria')//para fazer a ligação com o imput
+            var res = window.document.querySelector('div#res')
+            // abaixo criado as variaveis para convserção do imput, pois ele retorna o valor uma string
+            var sl = Number(salariofunc.value)
+            var es = Number(encsociais.value)
+            var qt = Number(quantfuncionarios.value)
+            var ch = Number(cargahora.value)
+            
+            var calc = (sl + es) / (qt * ch)      
+            res.innerHTML = `<p>Custo da Mão de obra : ${calc}</p>`
+        }
+        
+    </script>
+
+
+    <!-- <script>
+        window.alert('Esta pagina calcula a mão de obra direta')
+        var valorsalario = Number(window.prompt('Digite o total de salarios dos funcionarios: '))
+        var encargossociais = Number(window.prompt('Digite os encargos sociais:'))
+        var numeroempregados = Number(window.prompt('Digite a quantidade de empregados:'))
+        var horas = Number(window.prompt('Digite a carga horaia mensal - 160 ou 220 horas:'))
+        var custohora = (valorsalario + encargossociais) / (numeroempregados * horas)
+        document.write('Custo da Mão de obra Direta: ' + custohora.toFixed(2)) //monstrar so duas casas decimais no casso do resultato ser uma dizima
+
+    </script> -->
+</body>
+</html>
