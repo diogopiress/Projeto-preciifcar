@@ -6,7 +6,6 @@
     <title>Precificação na prestação de serviços</title>
 
     <style>
-        
         h1{
             background-color: khaki;
             width: 500px;
@@ -27,16 +26,14 @@
             font-size: small;
             margin-top: 200px;
         }
-
     </style>
 
 </head>
 
 <body>
 
-    <h1 id="maodeobra">
-        Calculo da Mão de Obra
-    </h1>
+    <h1 id="maodeobra">Calculo da Mão de Obra</h1>
+
     Salarios dos funcionarios: <input type="number" name="salariofuncionario" id="salariofuncionario">
     <br/>
     Encargos sociais: <input type="number" name="emcargossociais" id="encargossociais">
@@ -50,14 +47,18 @@
     <div id="res"></div>
 
     <h1 id="materiaisdiretos">Calculo dos Materiais Diretos </h1>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae architecto ipsam doloribus rem assumenda, saepe sed non nam, quos placeat magni dolor. Odio incidunt, reprehenderit ullam consectetur quo corporis quod?
+    Material01: <input type="number" class="matdireto" id="material01">
+    Material02: <input type="number" class="matdireto" id="material02">
+    Material03: <input type="number" class="matdireto" id="material03">
+    Valor total do material direto: <input type="number" id="customaterial">
 
-    <input type="button" id="calcular" value="Calcular MD" onclick="calcular()">
+    <div id="resmatdireto"></div>
+
+    <input type="button" id="calcular" value="Calcular MD" onclick="calcularmatdiretos()">
 
 
     <script>
         function calcular() {
-            
             var salariofunc = window.document.querySelector('input#salariofuncionario')//para fazer a ligação com o imput
             var encsociais = window.document.querySelector('input#encargossociais')//para fazer a ligação com o imput
             var quantfuncionarios = window.document.querySelector('input#totalfuncionarios')//para fazer a ligação com o imput
@@ -68,11 +69,9 @@
             var es = Number(encsociais.value)
             var qt = Number(quantfuncionarios.value)
             var ch = Number(cargahora.value)
-            
             var calc = (sl + es) / (qt * ch)      
             res.innerHTML = `<p>Custo da Mão de obra : ${calc}</p>`
-        }
-        
+        }                
     </script>
 
 
