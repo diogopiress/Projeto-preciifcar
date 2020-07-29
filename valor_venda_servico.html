@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculo de Mão de obra</title>
+    <title>Precificação na prestação de serviços</title>
 
     <style>
-
+        
+        h1{
+            background-color: khaki;
+            width: 500px;
+        }
         input#calcular{
             margin-top: 20px;
             font-size: large;            
@@ -18,13 +22,21 @@
             font-style: italic;
             background-color:grey ;
         }
+        footer{
+            font-style: italic;
+            font-size: small;
+            margin-top: 200px;
+        }
 
     </style>
 
 </head>
 
-
 <body>
+
+    <h1 id="maodeobra">
+        Calculo da Mão de Obra
+    </h1>
     Salarios dos funcionarios: <input type="number" name="salariofuncionario" id="salariofuncionario">
     <br/>
     Encargos sociais: <input type="number" name="emcargossociais" id="encargossociais">
@@ -33,9 +45,14 @@
     <br/>
     Carga horaria mensal (160 ou 220 horas): <input type="number" name="cargahoraria" id="cargahoraria">
     <br/>
-    <input type="button" id="calcular" value="Calcular" onclick="calcular()">
+    <input type="button" id="calcular" value="Calcular MO" onclick="calcular()">
 
     <div id="res"></div>
+
+    <h1 id="materiaisdiretos">Calculo dos Materiais Diretos </h1>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae architecto ipsam doloribus rem assumenda, saepe sed non nam, quos placeat magni dolor. Odio incidunt, reprehenderit ullam consectetur quo corporis quod?
+
+    <input type="button" id="calcular" value="Calcular MD" onclick="calcular()">
 
 
     <script>
@@ -70,4 +87,8 @@
 
     </script> -->
 </body>
+
+<footer>
+    Alternativa Soluções em  TI
+</footer>
 </html>
