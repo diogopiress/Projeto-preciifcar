@@ -1,0 +1,23 @@
+#calcs{
+    display: block;
+    position: relative;
+    background: chartreuse;
+}
+
+
+h1{
+    margin: 1% 0% 0% 0%;
+    text-align: center;
+    background-color: khaki;
+    /* width: 500px; */
+}    
+   
+
+
+#res{
+    margin-top: 20px;
+    width: 250px;
+    font-size: 20px;
+    font-style: italic;
+    background-color:grey ;
+}

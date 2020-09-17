@@ -4,90 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Precificação na prestação de serviços</title>
-
-    <style>
-        h1{
-            background-color: khaki;
-            width: 500px;
-        }
-        input#calcular{
-            margin-top: 20px;
-            font-size: large;            
-        }
-        div#res{
-            margin-top: 20px;
-            width: 250px;
-            font-size: 20px;
-            font-style: italic;
-            background-color:grey ;
-        }
-        footer{
-            font-style: italic;
-            font-size: small;
-            margin-top: 200px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="public/style/main.css">
+    <link rel="stylesheet" href="public/style/page-calc.css">
+   
 </head>
 
-<body>
+<body id="page-calc">
+           
+    <div class="calcs">
+        <h1 class="calcs-title" id="maodeobra">Calculo da Mão de Obra</h1>
 
-    <h1 id="maodeobra">Calculo da Mão de Obra</h1>
+        Salarios dos funcionarios: <input class="calcs-inputs" type="number" name="salariofuncionario" id="salariofuncionario">
+        Encargos sociais: <input class="calcs-inputs" type="number" name="emcargossociais" id="encargossociais">
+        Quantidade de funcionarios: <input class="calcs-inputs" type="number" name="totalfuncionarios" id="totalfuncionarios">
+        Carga horaria mensal (160 ou 220 horas): <input class="calcs-inputs" type="number" name="cargahoraria" id="cargahoraria">
+        
+        <input type="button" id="calcular" value="Calcular MO" onclick="calcular()">
+        <div id="res"></div>
+    </div>
 
-    Salarios dos funcionarios: <input type="number" name="salariofuncionario" id="salariofuncionario">
-    <br/>
-    Encargos sociais: <input type="number" name="emcargossociais" id="encargossociais">
-    <br/>
-    Quantidade de funcionarios: <input type="number" name="totalfuncionarios" id="totalfuncionarios">
-    <br/>
-    Carga horaria mensal (160 ou 220 horas): <input type="number" name="cargahoraria" id="cargahoraria">
-    <br/>
-    <input type="button" id="calcular" value="Calcular MO" onclick="calcular()">
+    <div class="calcs">
+        <h1 class="calcs-title" id="materiaisdiretos">Calculo dos Materiais Diretos </h1>
+        Material01: <input type="number" class="matdireto" id="material01">
+        Material02: <input type="number" class="matdireto" id="material02">
+        Material03: <input type="number" class="matdireto" id="material03">
+        Valor total do material direto: <input type="number" id="customaterial">
 
-    <div id="res"></div>
+        <div id="resmatdireto"></div>
 
-    <h1 id="materiaisdiretos">Calculo dos Materiais Diretos </h1>
-    Material01: <input type="number" class="matdireto" id="material01">
-    Material02: <input type="number" class="matdireto" id="material02">
-    Material03: <input type="number" class="matdireto" id="material03">
-    Valor total do material direto: <input type="number" id="customaterial">
+        <input type="button" id="calcular" value="Calcular MD" onclick="calcularmatdiretos()">
+    </div>
 
-    <div id="resmatdireto"></div>
-
-    <input type="button" id="calcular" value="Calcular MD" onclick="calcularmatdiretos()">
-
-
-    <script>
-        function calcular() {
-            var salariofunc = window.document.querySelector('input#salariofuncionario')//para fazer a ligação com o imput
-            var encsociais = window.document.querySelector('input#encargossociais')//para fazer a ligação com o imput
-            var quantfuncionarios = window.document.querySelector('input#totalfuncionarios')//para fazer a ligação com o imput
-            var cargahora = window.document.querySelector('input#cargahoraria')//para fazer a ligação com o imput
-            var res = window.document.querySelector('div#res')
-            // abaixo criado as variaveis para convserção do imput, pois ele retorna o valor uma string
-            var sl = Number(salariofunc.value)
-            var es = Number(encsociais.value)
-            var qt = Number(quantfuncionarios.value)
-            var ch = Number(cargahora.value)
-            var calc = (sl + es) / (qt * ch)      
-            res.innerHTML = `<p>Custo da Mão de obra : ${calc}</p>`
-        }                
-    </script>
+    <footer>
+        <p>
+            Alternativa Soluções em  TI
+        </p> 
+    </footer>
 
 
-    <!-- <script>
-        window.alert('Esta pagina calcula a mão de obra direta')
-        var valorsalario = Number(window.prompt('Digite o total de salarios dos funcionarios: '))
-        var encargossociais = Number(window.prompt('Digite os encargos sociais:'))
-        var numeroempregados = Number(window.prompt('Digite a quantidade de empregados:'))
-        var horas = Number(window.prompt('Digite a carga horaia mensal - 160 ou 220 horas:'))
-        var custohora = (valorsalario + encargossociais) / (numeroempregados * horas)
-        document.write('Custo da Mão de obra Direta: ' + custohora.toFixed(2)) //monstrar so duas casas decimais no casso do resultato ser uma dizima
+    <script src="scripts.js"></script>
 
-    </script> -->
+    
 </body>
 
-<footer>
-    Alternativa Soluções em  TI
-</footer>
+
 </html>
